@@ -1,0 +1,24 @@
+﻿
+@model IEnumerable<TaskTech.Models.Projects>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    @foreach (var Proje in Model)
+    {
+        <div class="col-sm-4 mt-3">
+            <div class="card" style="width: 18rem;">
+                <img src="~/Images/@Proje.ProImage" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">@Proje.ProName</h5>
+                    <p class="card-text">@Proje.ProTitle</p>
+                    <a href="#" class="btn btn-primary">Go to Project</a>
+                </div>
+            </div>
+        </div>
+    }
+
+    <button type="button" class="btn btn-lg btn-success mt-5 mx-auto col-12">More Projects</button>
+</div>
+

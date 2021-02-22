@@ -1,0 +1,139 @@
+﻿@model TaskTech.Models.Invoice
+@{
+    ViewData["Title"] = "Update";
+}
+
+<form method="post" asp-action="Update">
+    <input asp-for="Id" hidden />
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Add Item</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="InvoiceName"></label>
+                            <span asp-validation-for="InvoiceName" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="InvoiceName" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="InvoiceTitle"></label>
+                            <span asp-validation-for="InvoiceTitle" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="InvoiceTitle" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="InvoiceDate"></label>
+                            <span asp-validation-for="InvoiceDate" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="InvoiceDate" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="ClientName"></label>
+                            <span asp-validation-for="ClientName" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="ClientName" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="NetAmount"></label>
+                            <span asp-validation-for="NetAmount" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="NetAmount" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="TazAmount"></label>
+                            <span asp-validation-for="TazAmount" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="TazAmount" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="TotalAmount"></label>
+                            <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="TotalAmount" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="ProjectName"></label>
+                            <span asp-validation-for="ProjectName" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="ProjectName" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="Note"></label>
+                            <span asp-validation-for="Note" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="Note" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="PaymentStatusPending"></label>
+                            <span asp-validation-for="PaymentStatusPending" class="text-danger"></span>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="PaymentStatusPending" class="form-control" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-75" value="Update" />
+                        </div>
+                        <div class="col">
+                            <a asp-controller="Invoice" asp-action="Index" class="btn btn-danger w-75">Back</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}

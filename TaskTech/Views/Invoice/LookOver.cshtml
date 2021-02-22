@@ -1,0 +1,121 @@
+﻿@model TaskTech.Models.Invoice
+@{
+    ViewData["Title"] = "LookOver";
+}
+
+<form method="get" asp-action="LookOver">
+    <input asp-for="Id" hidden />
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Add Item</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="InvoiceName"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="InvoiceName" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="InvoiceTitle"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="InvoiceTitle" disabled class="form-control text-wrap" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="InvoiceDate"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="InvoiceDate" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="ClientName"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="ClientName" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="NetAmount"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="NetAmount" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="TazAmount"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="TazAmount" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="TotalAmount"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="TotalAmount" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="ProjectName"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="ProjectName" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="Note"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="Note" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="mt-2 col-12 d-flex">
+                        <div class="col-6">
+                            <label asp-for="PaymentStatusPending"></label>
+                        </div>
+                        <div class="col-6">
+                            <input asp-for="PaymentStatusPending" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <a asp-controller="Invoice" asp-action="Index" class="btn btn-danger w-75">Back</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+
+

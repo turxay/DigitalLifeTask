@@ -1,0 +1,91 @@
+﻿@model IEnumerable<TaskTech.Models.Invoice>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-12 text-center">
+            <h2 class="text-primary">ALL Invoices Amount List</h2>
+        </div>
+    </div>
+
+    <form method="get" asp-action="Index">
+        <p>
+            <input type="search" placeholder="Enter Project or Client Name" value=@ViewData["GetInvoiceDetails"] name="InvoicSearch" style="width:500px;" />
+            <input type="submit" value="Search" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-success">Get All Invoices</a>
+            <a asp-action="ExportExcel" asp-controller="AllInvoices" class="btn btn-secondary">Export Excel</a>
+
+        </p>
+    </form>
+
+
+    <br />
+
+    @if (Model.Count() > 0)
+    {
+        <table id="Table" class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr class="text-center">
+                    <th>
+                        Invoice Name
+                    </th>
+                    <th>
+                        Client Name
+                    </th>
+                    <th>
+                        Invoice Date
+                    </th>
+                    <th>
+                        Net Amount
+                    </th>
+                    <th>
+                        Tax Amount
+                    </th>
+                    <th>
+                        Total Amount
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Invoice in Model)
+                {
+                    <tr class="text-center">
+                        <td width="22%">@Invoice.InvoiceName</td>
+                        <td width="22%">@Invoice.ClientName</td>
+                        <td width="22%">@Invoice.InvoiceDate.ToString()</td>
+                        <td width="11%">@Invoice.NetAmount</td>
+                        <td width="11%">@Invoice.TazAmount</td>
+                        <td width="11%">@Invoice.TotalAmount</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <p class="text-primary">Sum Net Amount is<span id="NetAm" class="text-danger"></span> AZN</p>
+        <p class="text-primary">Sum Tax Amount is <span id="TaxAm" class="text-danger"></span> AZN</p>
+        <p class="text-primary">Sum  Amount is <span id="TotalAm" class="text-danger"></span> AZN</p>
+    }
+    else
+    {
+        <p>No items created yet</p>
+    }
+
+</div>
+
+<script>
+    var table = document.getElementById("Table");
+    sumNet = 0;
+    sumTax = 0;
+    sumTotal = 0;
+    for (var i = 1; i < table.rows.length; i++) {
+        sumNet = sumNet + parseInt(table.rows[i].cells[3].innerHTML);
+        sumTax = sumTax + parseInt(table.rows[i].cells[4].innerHTML);
+        sumTotal = sumTotal + parseInt(table.rows[i].cells[5].innerHTML);
+    }
+    document.getElementById("NetAm").innerHTML = sumNet;
+    document.getElementById("TaxAm").innerHTML = sumTax;
+    document.getElementById("TotalAm").innerHTML = sumTotal
+</script>
+
+
